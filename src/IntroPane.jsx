@@ -46,6 +46,7 @@ function IntroPane() {
             <CoolCanvas ref={can} />
             <h1>Jared Grove</h1>
             <h3>Full Stack Engineer</h3>
+            <p>I'm just a mechanical engineer who fell in love with all things programming</p>
         </IntroPaneWrapper>
     );
 }
