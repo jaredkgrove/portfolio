@@ -5,13 +5,14 @@ import Container from './styled-components/Container'
 import ProjectCard from './ProjectCard'
 import jbProjectImage from './images/jbProjectImage.PNG'
 import svgSketchProjectImage from './images/svgSketchProjectImage.PNG'
+import EditView from './svg-sketch-demo/EditView'
 
 function ProjectsPane() {
     return (    
         <Container> 
             <ProjectsFlex>
-                <ProjectCard title='j+b' image={jbProjectImage} tags={['React', 'Redux', 'React Hooks', 'Fetch API', 'Etsy API', 'Instagram API']} github='https://github.com/jaredkgrove/shopfront-front-end'></ProjectCard>
-                <ProjectCard title='SVG Sketch' image={svgSketchProjectImage} tags={['React', 'Redux', 'React Hooks', 'Fetch API', 'Etsy API', 'Instagram API']}></ProjectCard>
+                <ProjectCard title='j+b' image={jbProjectImage} tags={['React', 'Redux', 'React Hooks', 'Fetch API', 'Etsy API', 'Instagram API']} github='https://github.com/jaredkgrove/shopfront-front-end' website='https://jandb.herokuapp.com'></ProjectCard>
+                <ProjectCard title='SVG Sketch' image={svgSketchProjectImage} tags={['React', 'Redux', 'React Hooks', 'Fetch API', 'Etsy API', 'Instagram API']} github='https://github.com/jaredkgrove/svg-sketch' website='http://svg-sketch.herokuapp.com' demo><EditView/></ProjectCard>
                 <ProjectCard title='Pick-up'></ProjectCard>
             </ProjectsFlex>
         </Container>

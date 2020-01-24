@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import styled from 'styled-components'
+import Container from  './styled-components/Container'
+
 
 function ProjectCard(props) {
+    const [demoVisible, setDemoVisible] = useState(false);
     const renderTags = () => {if(props.tags) return props.tags.map(tag => <Tag>{tag}</Tag>)}
     
-    const renderGithubLink = () => {if(props.github) return <a href={props.github} target='_blank'>Github</a>}
+    const renderGithubLink = () => {if(props.github) return <li><Link href={props.github} target='_blank'>Github</Link></li>}
 
-    const renderWebiteLink = () => {if(props.website) return <a href={props.website} target='_blank'>Website</a>}
+    const renderWebiteLink = () => {if(props.website) return <li><Link href={props.website} target='_blank'>Website</Link></li>}
 
-    const renderUIDemo = () => {if(props.demo) return <demoWrapper>{props.demo.component}</demoWrapper>}
+    const renderDemoButton = () => {if(props.demo) return <DemoButton onClick={() => setDemoVisible(true)}>Demo</DemoButton>}
+    
+    const renderUIDemo = () => {if(demoVisible) return <DemoContainer >{props.children}</DemoContainer>}
+
 
     return (    
         <ProjectCardWrapper>
@@ -23,8 +29,9 @@ function ProjectCard(props) {
             <ProjectLinks>
                 {renderGithubLink()}
                 {renderWebiteLink()}
-                {renderUIDemo()}
             </ProjectLinks>
+            {renderDemoButton()}
+            {renderUIDemo()}
         </ProjectCardWrapper>
     );
 }
@@ -32,6 +39,7 @@ function ProjectCard(props) {
 export default ProjectCard;
 
 const ProjectCardWrapper = styled.div`
+    position: relative;
     height: 450px;
     width: 30%;
     max-width: 95%;
@@ -85,5 +93,28 @@ const Tag = styled.li`
 `;
 
 const ProjectLinks = styled.ul`
+
+    position: absolute;
+    bottom: 0px;
     font-size: 1.5em;
+    list-style-type: none;
+    text-align: left;
+`;
+
+const Link =styled.a`
+    text-decoration: none;
+    color: inherit;
+    :hover {
+        color: white;
+    }
+`;
+
+const DemoContainer = styled(Container)`
+    position: fixed;
+    
+    background: orange;
+`;
+
+const DemoButton = styled.button`
+
 `;
