@@ -5,8 +5,8 @@
   font-size: 12px;
 }
 
-@media screen and (min-width: 601px) {
-  .app {
+@media screen and (max-width: 601px) {
+  .App {
     font-size: 6px;
   }
 }

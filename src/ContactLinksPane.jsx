@@ -1,22 +1,23 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components'
+import Container from './styled-components/Container'
 
 function ContactLinksPane() {
     return (    
-        <ContactLinksPaneWrapper>
+        <Container>
             <div>Github</div>
             <div>LinkedIn</div>
             
-        </ContactLinksPaneWrapper>
+        </Container>
     );
 }
 
 export default ContactLinksPane;
 
-const ContactLinksPaneWrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
-  text-align: center;
-`;
+// const ContactLinksPaneWrapper = styled.div`
+//   height: 100vh;
+//   width: 100vw;
+//   text-align: center;
+// `;
 

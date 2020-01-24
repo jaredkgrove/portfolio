@@ -1,15 +1,17 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components'
+import Container from './styled-components/Container'
 import IntroCanvas from './introCanvas';
 
 function IntroPane() {
     return (    
-        <IntroPaneWrapper>
+        <FlexContainer fullScreen>
             {/* <IntroCanvas></IntroCanvas> */}
+
             <Title>Jared Grove</Title>
             <Subtitle>A mechanical engineer who fell in love with code</Subtitle>
-        </IntroPaneWrapper>
+        </FlexContainer>
     );
 }
 
@@ -24,14 +26,11 @@ const Subtitle = styled.h1`
     font-weight: 500;
 `;
 
-const IntroPaneWrapper = styled.div`
+const FlexContainer = styled(Container)`
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction:column;
-    height: 100vh;
-    width: 100vw;
-    text-align: center;
     background: #4E8EB1;
     color: #EFEFF6;
 `;
