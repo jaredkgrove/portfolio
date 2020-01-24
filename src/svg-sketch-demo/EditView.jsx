@@ -8,9 +8,9 @@ const EditView = () => {
         const updateFillColor= (hue, saturation, light) => setSettings({...settings, fillColor: {h: hue, s: saturation, l: light}})
         const updateLineColor= (hue, saturation, light) => setSettings({...settings, lineColor: {h: hue, s: saturation, l: light}})
 
-        const updateLineWidth = (type) => setSettings({...settings, lineType: type})
+        const updateLineType= (type) => setSettings({...settings, lineType: type})
 
-        const updateLineType = (width) => setSettings({...settings, lineWidth: width})
+        const updateLineWidth = (width) => setSettings({...settings, lineWidth: width})
 
         return(
             <EditViewWrapper>
@@ -25,8 +25,6 @@ const EditView = () => {
 export default EditView
 
 const EditViewWrapper = styled.div`
-    position: absolute;
-    top: 8vh;
-    width: 100vw
     left: 0px;
+    background: white;
 `;

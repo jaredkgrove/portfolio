@@ -7,7 +7,10 @@ import styled from 'styled-components'
         props.handleUpdate(value)
     }
 
-    const isCurrentSetting = value => (value === props.lineType)
+    const isCurrentSetting = value => {
+        console.log(props.lineType)
+        return value === props.lineType
+    }
 
     return (
         <LineTypeWrapper>

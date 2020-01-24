@@ -158,7 +158,7 @@ const SketchWrapper = styled.svg`
     clear: none;
     text-align: center;
     float: right;
-    height: 100%;
+    
     width: 84%;
     box-sizing: border-box ;
     border-radius: 10px;
