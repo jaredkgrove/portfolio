@@ -10,7 +10,7 @@ function ProjectsPane() {
     return (    
         <Container> 
             <ProjectsFlex>
-                <ProjectCard title='j+b' image={jbProjectImage} tags={['React', 'Redux', 'React Hooks', 'Fetch API', 'Etsy API', 'Instagram API']}></ProjectCard>
+                <ProjectCard title='j+b' image={jbProjectImage} tags={['React', 'Redux', 'React Hooks', 'Fetch API', 'Etsy API', 'Instagram API']} github='https://github.com/jaredkgrove/shopfront-front-end'></ProjectCard>
                 <ProjectCard title='SVG Sketch' image={svgSketchProjectImage} tags={['React', 'Redux', 'React Hooks', 'Fetch API', 'Etsy API', 'Instagram API']}></ProjectCard>
                 <ProjectCard title='Pick-up'></ProjectCard>
             </ProjectsFlex>
