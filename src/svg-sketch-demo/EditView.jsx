@@ -14,8 +14,9 @@ const EditView = () => {
 
         return(
             <EditViewWrapper>
+                                <SettingsContainer settings={settings} updateFillColorSetting={updateFillColor} updateLineColorSetting={updateLineColor} updateLineWidthSetting={updateLineWidth} updateLineTypeSetting={updateLineType}/>
+
                 <SketchContainer settings={settings} />
-                <SettingsContainer settings={settings} updateFillColorSetting={updateFillColor} updateLineColorSetting={updateLineColor} updateLineWidthSetting={updateLineWidth} updateLineTypeSetting={updateLineType}/>
             </EditViewWrapper>
         )
 }
@@ -26,5 +27,6 @@ export default EditView
 
 const EditViewWrapper = styled.div`
     left: 0px;
-    background: white;
+    background: green;
+    height: 100%;
 `;

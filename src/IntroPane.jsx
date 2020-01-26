@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import styled from 'styled-components'
 import Container from './styled-components/Container'
-import IntroCanvas from './introCanvas';
+// import IntroCanvas from './introCanvas';
 
 function IntroPane() {
     return (    

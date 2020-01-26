@@ -6,7 +6,7 @@ import Container from  './styled-components/Container'
 
 function ProjectCard(props) {
     const [demoVisible, setDemoVisible] = useState(false);
-    const renderTags = () => {if(props.tags) return props.tags.map(tag => <Tag>{tag}</Tag>)}
+    const renderTags = () => {if(props.tags) return props.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
     
     const renderGithubLink = () => {if(props.github) return <li><Link href={props.github} target='_blank'>Github</Link></li>}
 
@@ -14,8 +14,11 @@ function ProjectCard(props) {
 
     const renderDemoButton = () => {if(props.demo) return <DemoButton onClick={() => setDemoVisible(true)}>Demo</DemoButton>}
     
-    const renderUIDemo = () => {if(demoVisible) return <DemoContainer fullScreen>{props.children}</DemoContainer>}
+    const renderUIDemo = () => {if(demoVisible) return <DemoContainer fullScreen onClick={(e) => {if(e.target === e.currentTarget) return hideDemo()}}>{props.children}</DemoContainer>}
 
+    const hideDemo = () => {
+        setDemoVisible(false)
+    }
 
     return (    
         <ProjectCardWrapper>
@@ -114,10 +117,10 @@ const DemoContainer = styled(Container)`
     position: fixed;
     top: 0px;
     left: 0px;
-    background: white;
+    background: hsl(0, 0%, 0%, 0.5);
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 `;
 
 const DemoButton = styled.button`

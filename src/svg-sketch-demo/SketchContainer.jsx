@@ -18,16 +18,19 @@ class SketchContainer extends React.Component {
 
     componentDidMount(){
         this.updateDimensions()
-        this.sketchArea.current.addEventListener('touchstart', this.handleOnMouseDown);
-        this.sketchArea.current.addEventListener('touchmove', this.handleOnMouseMove);
-        this.sketchArea.current.addEventListener('touchend', this.handleOnMouseUp);
         window.addEventListener('resize', this.updateDimensions);
         window.addEventListener('keypress',this.handleOnKeyPress)
+    }
+
+    componentDidUpdate(){
+        console.log('update')
+        this.updateDimensions()
     }
     
     updateDimensions = () => {
         if(this.sketchArea.current){
-            this.sketchClientRect = this.sketchArea.current.getBoundingClientRect() 
+            this.sketchClientRect = this.sketchArea.current.getBoundingClientRect()
+
         }
     }
 
@@ -57,9 +60,9 @@ class SketchContainer extends React.Component {
     handleOnMouseMove = (e) => {
         e.preventDefault()
         let point = this.getCurrentPoint(e)
-        let ratio = 1000 / this.sketchClientRect.width
-        let ratioX = 1000 / this.sketchClientRect.width
-        let ratioY = 500 / this.sketchClientRect.height
+        let ratio = 1//1000 / this.sketchClientRect.width
+        let ratioX = 1//1000 / this.sketchClientRect.width
+        let ratioY = 1//500 / this.sketchClientRect.height
 
         if(this.state.isDrawing){
             switch(this.props.settings.lineType){
@@ -144,7 +147,10 @@ class SketchContainer extends React.Component {
     render(){
         const elementsToRender = () => [...this.state.elements, ...this.state.tempElements, ...this.state.cursorElement]
         return(
-            <SketchWrapper ref={this.sketchArea} viewBox = {`0 0 1000 500`} onMouseDown={this.handleOnMouseDown} onMouseMove={this.handleOnMouseMove} onMouseUp={this.handleOnMouseUp} onMouseLeave={e => this.setState({cursorElement: []})}>
+                    // this.sketchArea.current.addEventListener('touchstart', this.handleOnMouseDown);
+        // this.sketchArea.current.addEventListener('touchmove', this.handleOnMouseMove);
+        // this.sketchArea.current.addEventListener('touchend', this.handleOnMouseUp);
+            <SketchWrapper ref={this.sketchArea} viewBox = {`0 0 ${this.sketchClientRect.width} ${this.sketchClientRect.height}`} onTouchStart={this.handleOnMouseDown} onTouchMove={this.handleOnMouseMove} onTouchEnd={this.handleOnMouseUp} onMouseDown={this.handleOnMouseDown} onMouseMove={this.handleOnMouseMove} onMouseUp={this.handleOnMouseUp} onMouseLeave={e => this.setState({cursorElement: []})}>
                 <ElementsContainer elements={elementsToRender()} />
             </SketchWrapper>
         )
@@ -159,7 +165,7 @@ const SketchWrapper = styled.svg`
     text-align: center;
     float: right;
     
-    width: 84%;
+  
     box-sizing: border-box ;
     border-radius: 10px;
     background: hsl(207, 5%, 90%);
