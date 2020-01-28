@@ -61,8 +61,8 @@ class SaturationLightnessSelector extends React.Component {
 
     fillCanvas = () => {
         let context = this.canvas.current.getContext("2d");
-        this.canvas.current.style.width='100%';
-        this.canvas.current.style.height='100%';
+        this.canvas.current.style.width = '100%'
+        this.canvas.current.style.height = '100%'
 
         let height = this.canvas.current.height
         let width = this.canvas.current.width * 3/4
@@ -127,12 +127,20 @@ class SaturationLightnessSelector extends React.Component {
 
  
 const SatLightWrapper = styled.div`
-    float: right;
-    clear: both;
-    height: 50%;
+    height: 100px;
+    @media screen and (max-height: 600px) {
+        height: 50px;
+    }
+      
+    flex-grow:1;
+    flex-shrink:1;
+    padding: 0px;
+    margin: 0px;
 `;
-
+// height: 50%;
 const SatLightCanvas = styled.canvas`
+    padding: 0px;
+    margin: 0px;
     background-color: ${props => `hsl(${props.hue}, ${props.sat}%, ${props.light}%)`};
 `;
 

@@ -30,13 +30,9 @@ const StrokeSelectorContainer = (props) => {
 export default StrokeSelectorContainer
 
 const StrokeSelectorWrapper = styled.div`
-    box-sizing: border-box ;
-    float: left;
-    padding: 1vw 0.5vw 1vw 0.5vw;
+    padding: 5px;
     margin: 0 0 0 0;
     border-radius: 10px;
-   
     background:  hsl(207, 25%, 20%);
-    clear: none;
     overflow: auto;
 `;

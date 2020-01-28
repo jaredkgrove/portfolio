@@ -86,11 +86,12 @@ import styled from 'styled-components'
  export default HueSelector
 
  const HueBar = styled.div`
+    flex-basis: 10px;
     box-sizing: border-box;
     position: relative;
-    height: 10px;
-    margin: 10px 0px 10px 0px;
-    clear: both;
+
+    margin: 0px 0px 4px 0px;
+
     background: linear-gradient(to right,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%))
 `;
 

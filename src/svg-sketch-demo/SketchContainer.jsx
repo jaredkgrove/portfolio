@@ -160,13 +160,9 @@ class SketchContainer extends React.Component {
 export default SketchContainer
 
 const SketchWrapper = styled.svg`
-    box-sizing: border-box;
-    clear: none;
-    text-align: center;
-    float: right;
-    
-  
-    box-sizing: border-box ;
+ 
     border-radius: 10px;
     background: hsl(207, 5%, 90%);
+    width: 100%;
+    height: 100%;
 `;

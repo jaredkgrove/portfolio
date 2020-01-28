@@ -15,8 +15,12 @@ const Container = styled.div`
         return '25px'
     }};
     ${props => {
-        if (props.fullScreen) return 'height: 100vh;'
-    }}
+        if (props.fullScreen){ 
+            if (props.fullVertical) return 'height: 100vh;'
+            if (props.small) return 'height: calc(100vh - 30px);'
+            return 'height: calc(100vh - 50px);'
+        }}
+    }
 `;
 
 export default Container

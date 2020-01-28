@@ -87,7 +87,7 @@ import styled from 'styled-components'
     box-sizing: border-box;
     position: relative;
     height: 20px;
-    margin: 10px 0px 10px 0px;
+    margin-bottom: 5px;
     clear: both;
     background: ${props => `linear-gradient(to right, transparent ${props.sliderPosition}px, hsl(207, 25%, 20%, 0.9) ${props.sliderPosition}px), linear-gradient(to right bottom, hsl(207, 25%, 20%) 50%, white 50%);`}
 `;

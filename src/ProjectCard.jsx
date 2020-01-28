@@ -14,7 +14,7 @@ function ProjectCard(props) {
 
     const renderDemoButton = () => {if(props.demo) return <DemoButton onClick={() => setDemoVisible(true)}>Demo</DemoButton>}
     
-    const renderUIDemo = () => {if(demoVisible) return <DemoContainer fullScreen onClick={(e) => {if(e.target === e.currentTarget) return hideDemo()}}>{props.children}</DemoContainer>}
+    const renderUIDemo = () => {if(demoVisible) return <DemoContainer fullScreen small onClick={(e) => {if(e.target === e.currentTarget) return hideDemo()}}>{props.children}</DemoContainer>}
 
     const hideDemo = () => {
         setDemoVisible(false)
@@ -114,9 +114,12 @@ const Link =styled.a`
 
 const DemoContainer = styled(Container)`
     z-index: 1;
+    box-sizing: border-box;
     position: fixed;
     top: 0px;
     left: 0px;
+    width: 100%;
+    height: 100%;
     background: hsl(0, 0%, 0%, 0.5);
     display: flex;
     justify-content: center;

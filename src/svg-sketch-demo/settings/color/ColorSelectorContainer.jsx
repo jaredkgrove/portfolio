@@ -9,7 +9,7 @@ const ColorSelectorContainer = (props) => {
 
     return(
         <ColorSelectorWrapper>
-            <div>{props.text}</div>
+            <div style={{flexBasis:'10px'}}>{props.text}</div>
             <SaturationLightnessSelector initColor={props.color} handleChange={props.handleUpdate}/>
             <HueSelector handleChange={props.handleUpdate} initHue={props.color.h}/>
         </ColorSelectorWrapper>
@@ -20,12 +20,9 @@ const ColorSelectorContainer = (props) => {
 export default ColorSelectorContainer
 
 const ColorSelectorWrapper = styled.div`
-    box-sizing: border-box ;
-    float: left;
-    padding: 0px 0.5vw 0px 0.5vw;
-    margin: 0 0 1vw 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
     border-radius: 10px;
-    
     background:  hsl(207, 25%, 20%);
-    clear: none;
 `;

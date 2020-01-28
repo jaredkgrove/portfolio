@@ -62,7 +62,6 @@ const TechnologyCard = styled.div`
     max-height: 100%;
     overflow: hidden;
     > *{
-
         > *{
             object-fit: contain;
             max-width: 100%; 

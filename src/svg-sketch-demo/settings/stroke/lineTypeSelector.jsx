@@ -32,9 +32,8 @@ import styled from 'styled-components'
  export default LineTypeSelector
 
  const LineTypeWrapper = styled.div`
-    float: left;
-    clear: both;
-    width: 100%;
+    
+
 `;
 
 const LineTypeSvg = styled.svg`
