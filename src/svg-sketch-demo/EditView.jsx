@@ -16,6 +16,7 @@ const EditView = () => {
             <EditViewWrapper>
                 <SketchContainer settings={settings} />
                 <SettingsContainer settings={settings} updateFillColorSetting={updateFillColor} updateLineColorSetting={updateLineColor} updateLineWidthSetting={updateLineWidth} updateLineTypeSetting={updateLineType}/>
+                
             </EditViewWrapper>
         )
 }
