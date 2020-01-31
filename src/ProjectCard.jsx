@@ -43,18 +43,16 @@ export default ProjectCard;
 
 const ProjectCardWrapper = styled.div`
     position: relative;
-    height: 450px;
-    width: 30%;
-    max-width: 95%;
-    min-width: 250px;
-    border-radius: 30px;
+
+    width: 100%;
+    border-radius: 5px;
     padding: 10px 5px 10px 5px;
     margin: 10px 0px 10px 0px;
     background: #DADAE6;
     text-align: center;
     @media screen and (max-width: 601px) {
         width: 90%;
-      }
+    }
 `;
 
 const ProjectTitle = styled.h3`
@@ -66,8 +64,9 @@ const ProjectTitle = styled.h3`
 
 const ProjectImageWrapper = styled.div`
     position: relative;
-    left: 20%;
-    width: 60%;
+    width: 300px;
+    max-width: 100vw;
+    height: 100px;
     padding-top: 60%;
     text-align: center;
 
@@ -79,9 +78,9 @@ const ProjectImage = styled.img`
     width: 100%;
     top:0px;
     left: 0px;
-    border-radius: 50%;
+    border-radius: 5px;
     text-align: center;
-    object-fit: cover;
+    object-fit: contain;
 `;
 
 const ProjectTags = styled.ul`
@@ -96,7 +95,6 @@ const Tag = styled.li`
 `;
 
 const ProjectLinks = styled.ul`
-
     position: absolute;
     bottom: 0px;
     font-size: 1.5em;
