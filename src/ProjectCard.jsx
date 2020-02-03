@@ -22,10 +22,11 @@ function ProjectCard(props) {
 
     return (    
         <ProjectCardWrapper>
-            <ProjectTitle>{props.title}</ProjectTitle>
+            
             <ProjectImageWrapper>
                 <ProjectImage src={props.image}/>
             </ProjectImageWrapper>
+            <ProjectTitle>{props.title}</ProjectTitle>
             <ProjectTags>
                 {renderTags()}
             </ProjectTags>
@@ -43,16 +44,12 @@ export default ProjectCard;
 
 const ProjectCardWrapper = styled.div`
     position: relative;
-
     width: 100%;
     border-radius: 5px;
-    padding: 10px 5px 10px 5px;
-    margin: 10px 0px 10px 0px;
+    padding: 5px;
+    margin: 5px;
     background: #DADAE6;
     text-align: center;
-    @media screen and (max-width: 601px) {
-        width: 90%;
-    }
 `;
 
 const ProjectTitle = styled.h3`
@@ -64,6 +61,7 @@ const ProjectTitle = styled.h3`
 
 const ProjectImageWrapper = styled.div`
     position: relative;
+    display: inline-block;
     width: 300px;
     max-width: 100vw;
     height: 100px;
