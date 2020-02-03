@@ -26,7 +26,7 @@ function IntroCanvas() {
         can.current.height = canvasHeight
         let currentY = 0
         let lineWidth = 10
-        let color = 'hsl(60,60%,60%)'
+        let color = '#4E8EB1';
         do {
             if(currentY % 20 === 0){
                 canvasLineArray.push(new CanvasLine(0 - Math.random()*5000, currentY, lineWidth, color))
